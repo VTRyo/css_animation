@@ -1,0 +1,69 @@
+/*   animation: NAME 変化時間 変化タイプ 変化開始時間 アニメ終了時の状態 */
+/*  ※animation: animation-nameの値 animation-durationの値 animation-timing-functionの値 animation-delayの値 animation-iteration-countの値 animation-directionの値 animation-fill-modeの値 animation-play-stateの値 */
+
+.rotate-90-cw {
+  position: absolute;
+  top: calc(50% - 180px); right: 80px;
+  width: 360px; height: 360px;
+  background-color: #39a9d6;
+
+  animation:  move-right 0.5s linear forwards,
+              rotate-90-cw 0.4s ease 1s forwards ,
+              scale-out-center 0.5s ease 1.5s forwards;
+}
+
+.text {
+  position: absolute;
+  top: calc(50% - 100px); right: 120px;
+  font-size: 200%;
+  animation: 
+    move-right 0.9s 1.8s forwards,
+    focus-in-expand 0.8s 2s forwards;
+}
+
+/* @keyframes NAMEで定義する
+0% アニメーション開始時
+100% アニメーション終了時
+*/
+@keyframes rotate-90-cw {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
