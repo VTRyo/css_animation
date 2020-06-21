@@ -31,11 +31,33 @@
 
 @keyframes move-left {
   0% {
-    transform: translateX(10px);
+    transform: translateX(1000px);
     opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px);
+    opacity: 1;
+  }
+}
+
+@keyframes move-bottom {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000px);
     opacity: 1;
   }
 }
