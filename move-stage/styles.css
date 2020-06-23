@@ -1,0 +1,114 @@
+@import url("./keyframes.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+p { margin: 0; }
+
+#stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  min-width: 1100px; min-height: 650px;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* width: 200%にすることで右へ移動する演出が可能 */
+#introduction {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%; height: 100%;
+  animation: move-stage-right 0.8s ease 1.2s forwards;
+}
+
+#introduction .intro1,
+#introduction .intro2 {
+  position: absolute;
+  top: calc(50% - 60px);
+  height: 120px;
+}
+
+#introduction .intro1 {
+  left: calc(25% - 240px);
+}
+
+#introduction .intro2 {
+  right: 80px;
+}
+
+#introduction .intro1 div,
+#introduction .intro2 div {
+  float: left;
+  width: 100px; height: 120px;
+ 
+}
+
+#introduction .intro1 div p,
+#introduction .intro2 div p {
+  width: 100%; height: 100%;
+  font-size: 80px;
+  color: white;
+  text-align: center;
+  line-height: 120px;
+  opacity: 0;
+}
+
+#introduction .intro1::after,
+#introduction .intro2::after {
+  content: ""; display: block; clear: both;
+}
+
+#introduction .intro1 div:nth-child(1) p { animation: show-word 0.6s ease-out 0.0s forwards; }
+#introduction .intro1 div:nth-child(2) p { animation: show-word 0.6s ease-out 0.2s forwards; }
+#introduction .intro1 div:nth-child(3) p { animation: show-word 0.6s ease-out 0.4s forwards; }
+#introduction .intro1 div:nth-child(4) p { animation: show-word 0.6s ease-out 0.6s forwards; }
+#introduction .intro1 div:nth-child(5) p { animation: show-word 0.6s ease-out 0.8s forwards; }
+#introduction .intro1 div:nth-child(6) p { animation: show-word 0.6s ease-out 1.0s forwards; }
+
+#introduction .intro2 div:nth-child(1) p { animation: show-word 0.6s ease-out 1.6s forwards; }
+#introduction .intro2 div:nth-child(2) p { animation: show-word 0.6s ease-out 1.8s forwards; }
+#introduction .intro2 div:nth-child(3) p { animation: show-word 0.6s ease-out 2.0s forwards; }
+#introduction .intro2 div:nth-child(4) p { animation: show-word 0.6s ease-out 2.2s forwards; }
+
+/* line */
+#introduction .connect-line {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* 引く線の位置 */
+#introduction .line {
+  position: absolute;
+  top: calc(50% + 99px);
+  height: 1px;
+  overflow: hidden;
+}
+
+/* 引いた線が右に突き抜ける演出 */
+#introduction .line:after {
+  content: ""; display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: white;
+  transform: translateX(-100%);
+}
+
+/* 引いた線の長さと位置 */
+#introduction .line-1 {
+  width: 650px; left: calc(25% - 240px);
+}
+#introduction .line-2 {
+  width: calc(((50% - 480px) / 2) + (50% - 80px));
+  right: 80px;
+}
+
+#introduction .line-1:after {
+  animation: draw-line 1.2s ease 0s forwards;
+}
+#introduction .line-2:after {
+  animation: slash-line 1.6s ease 1.2s forwards;
+}

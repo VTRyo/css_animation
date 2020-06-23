@@ -1,0 +1,27 @@
+@keyframes show-word {
+  0%   { transform: scale(0.4); opacity: 0; }
+  70%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes draw-line {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes slash-line {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes put-point {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(2); }
+  100% { transform: scale(0); }
+}
+
+@keyframes move-stage-right {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
