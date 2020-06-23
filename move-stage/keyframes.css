@@ -1,3 +1,13 @@
+@keyframes move-right {
+  0%   { transform: translateX(-1000px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes move-left {
+  0%   { transform: translateX(1000px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
 @keyframes show-word {
   0%   { transform: scale(0.4); opacity: 0; }
   70%  { transform: scale(1.05); opacity: 1; }
